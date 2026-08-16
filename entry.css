@@ -1,0 +1,2388 @@
+/* =========================================================
+   CHANDU BALAGANI
+   MULTIVERSE ENTRY PAGE
+========================================================= */
+
+
+/* =========================================================
+   VARIABLES
+========================================================= */
+
+:root {
+
+    --black: #020204;
+
+    --deep-black: #050308;
+
+    --white: #f0eef3;
+
+    --name-soft: #aaa1b2;
+
+    --role: rgba(218, 208, 225, .48);
+
+    --purple: #7c38bd;
+
+    --purple-light: #a77bc9;
+
+    --magenta: #a5356c;
+
+    --line: rgba(220, 205, 235, .15);
+
+    --ease:
+        cubic-bezier(.22, .61, .36, 1);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html,
+body {
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+body {
+
+    overflow: hidden;
+
+    background:
+        var(--black);
+
+    color:
+        var(--white);
+
+    font-family:
+        "Manrope",
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    -webkit-font-smoothing:
+        antialiased;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.multiverse {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100vh;
+
+    min-height: 650px;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    isolation: isolate;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 48%,
+            rgba(91, 34, 145, .11),
+            transparent 27%
+        ),
+
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(151, 38, 91, .06),
+            transparent 28%
+        ),
+
+        linear-gradient(
+            180deg,
+            #020204 0%,
+            #050308 55%,
+            #030205 100%
+        );
+
+}
+
+
+/* =========================================================
+   STARS
+========================================================= */
+
+.stars {
+
+    position: absolute;
+
+    inset: -50%;
+
+    width: 200%;
+
+    height: 200%;
+
+    pointer-events: none;
+
+    background-image:
+
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.70) 1px,
+            transparent 1.4px
+        );
+
+    background-size:
+        105px 105px;
+
+    opacity:
+        .23;
+
+    animation:
+        starsDrift
+        75s
+        linear
+        infinite;
+
+    z-index:
+        -5;
+
+}
+
+
+.stars-two {
+
+    background-size:
+        165px 165px;
+
+    background-position:
+        40px 80px;
+
+    opacity:
+        .15;
+
+    animation-duration:
+        100s;
+
+    animation-direction:
+        reverse;
+
+}
+
+
+.stars-three {
+
+    background-size:
+        250px 250px;
+
+    background-position:
+        100px 30px;
+
+    opacity:
+        .09;
+
+    animation-duration:
+        130s;
+
+}
+
+
+@keyframes starsDrift {
+
+    from {
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            );
+
+    }
+
+    to {
+
+        transform:
+            translate3d(
+                -100px,
+                -80px,
+                0
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   AMBIENT GLOWS
+========================================================= */
+
+.ambient-glow {
+
+    position:
+        absolute;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    filter:
+        blur(100px);
+
+    z-index:
+        -3;
+
+}
+
+
+.glow-one {
+
+    width:
+        480px;
+
+    height:
+        480px;
+
+    top:
+        -220px;
+
+    left:
+        -180px;
+
+    background:
+        rgba(102, 30, 180, .10);
+
+    animation:
+        ambientOne
+        13s
+        ease-in-out
+        infinite;
+
+}
+
+
+.glow-two {
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    right:
+        -230px;
+
+    bottom:
+        -250px;
+
+    background:
+        rgba(166, 34, 91, .075);
+
+    animation:
+        ambientTwo
+        15s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes ambientOne {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .55;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.18);
+
+        opacity:
+            .9;
+
+    }
+
+}
+
+
+@keyframes ambientTwo {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .5;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.16);
+
+        opacity:
+            .85;
+
+    }
+
+}
+
+
+/* =========================================================
+   CURSOR GLOW
+========================================================= */
+
+.cursor-glow {
+
+    position:
+        fixed;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        240px;
+
+    height:
+        240px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+    z-index:
+        2;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(132, 71, 190, .065),
+            transparent 68%
+        );
+
+    filter:
+        blur(15px);
+
+    opacity:
+        0;
+
+    transition:
+        opacity .5s ease;
+
+}
+
+
+/* =========================================================
+   UNIVERSE
+========================================================= */
+
+.universe {
+
+    position:
+        absolute;
+
+    width:
+        640px;
+
+    height:
+        640px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        1;
+
+    animation:
+        universeFloat
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes universeFloat {
+
+    0%,
+    100% {
+
+        margin-top:
+            0;
+
+    }
+
+    50% {
+
+        margin-top:
+            -10px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CORE
+========================================================= */
+
+.universe-core {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    width:
+        170px;
+
+    height:
+        170px;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 32% 27%,
+            rgba(228, 215, 241, .75) 0%,
+            rgba(185, 103, 153, .60) 11%,
+            rgba(138, 42, 112, .82) 28%,
+            rgba(94, 25, 150, .92) 50%,
+            rgba(43, 9, 74, .97) 73%,
+            #08030c 100%
+        );
+
+    box-shadow:
+
+        0 0 30px
+        rgba(112, 38, 170, .52),
+
+        0 0 70px
+        rgba(105, 30, 166, .27),
+
+        0 0 120px
+        rgba(163, 40, 100, .10);
+
+    animation:
+        corePulse
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+.universe-core::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        -10px;
+
+    border-radius:
+        50%;
+
+    border:
+        1px solid
+        rgba(221, 199, 240, .25);
+
+    box-shadow:
+        0 0 18px
+        rgba(137, 68, 194, .10);
+
+    animation:
+        coreRing
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.universe-core::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        15px;
+
+    border-radius:
+        50%;
+
+    background:
+
+        radial-gradient(
+            circle at 28% 22%,
+            rgba(255,255,255,.22),
+            transparent 18%
+        );
+
+    opacity:
+        .65;
+
+}
+
+
+.core-light {
+
+    position:
+        absolute;
+
+    width:
+        60px;
+
+    height:
+        60px;
+
+    top:
+        18px;
+
+    left:
+        27px;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(225, 209, 242, .28);
+
+    filter:
+        blur(21px);
+
+    animation:
+        lightMove
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+@keyframes corePulse {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(.98);
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            scale(1.035);
+
+    }
+
+}
+
+
+@keyframes coreRing {
+
+    0%,
+    100% {
+
+        transform:
+            scale(1);
+
+        opacity:
+            .35;
+
+    }
+
+    50% {
+
+        transform:
+            scale(1.08);
+
+        opacity:
+            .65;
+
+    }
+
+}
+
+
+@keyframes lightMove {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                27px,
+                21px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   ORBIT RINGS
+========================================================= */
+
+.universe-ring {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    border-radius:
+        50%;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* Ring 1 */
+
+.ring-one {
+
+    width:
+        390px;
+
+    height:
+        150px;
+
+    border:
+        1px solid
+        rgba(213, 194, 233, .15);
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(-25deg);
+
+    animation:
+        ringOne
+        14s
+        linear
+        infinite;
+
+}
+
+
+/* Ring 2 */
+
+.ring-two {
+
+    width:
+        475px;
+
+    height:
+        190px;
+
+    border:
+        1px solid
+        rgba(180, 77, 130, .13);
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(40deg);
+
+    animation:
+        ringTwo
+        18s
+        linear
+        infinite;
+
+}
+
+
+/* Ring 3 */
+
+.ring-three {
+
+    width:
+        575px;
+
+    height:
+        240px;
+
+    border:
+        1px solid
+        rgba(113, 54, 170, .10);
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        rotate(70deg);
+
+    animation:
+        ringThree
+        24s
+        linear
+        infinite;
+
+}
+
+
+@keyframes ringOne {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(-25deg)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(-25deg)
+            rotate(360deg);
+
+    }
+
+}
+
+
+@keyframes ringTwo {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(40deg)
+            rotate(360deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(40deg)
+            rotate(0deg);
+
+    }
+
+}
+
+
+@keyframes ringThree {
+
+    from {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(70deg)
+            rotate(0deg);
+
+    }
+
+    to {
+
+        transform:
+            translate(
+                -50%,
+                -50%
+            )
+            rotate(70deg)
+            rotate(360deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   PARTICLES
+========================================================= */
+
+.particle {
+
+    position:
+        absolute;
+
+    width:
+        5px;
+
+    height:
+        5px;
+
+    border-radius:
+        50%;
+
+    background:
+        #c9b6d9;
+
+    box-shadow:
+        0 0 12px
+        rgba(218, 199, 236, .55);
+
+    opacity:
+        .62;
+
+}
+
+
+.particle-one {
+
+    top:
+        14%;
+
+    left:
+        34%;
+
+    animation:
+        particleOne
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-two {
+
+    top:
+        25%;
+
+    right:
+        12%;
+
+    animation:
+        particleTwo
+        7s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-three {
+
+    bottom:
+        19%;
+
+    left:
+        18%;
+
+    animation:
+        particleThree
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-four {
+
+    bottom:
+        13%;
+
+    right:
+        25%;
+
+    animation:
+        particleFour
+        6.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-five {
+
+    top:
+        40%;
+
+    left:
+        5%;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    animation:
+        particleFive
+        9s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-six {
+
+    top:
+        12%;
+
+    right:
+        30%;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    animation:
+        particleSix
+        7.5s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-seven {
+
+    top:
+        67%;
+
+    right:
+        8%;
+
+    width:
+        4px;
+
+    height:
+        4px;
+
+    animation:
+        particleSeven
+        8s
+        ease-in-out
+        infinite;
+
+}
+
+
+.particle-eight {
+
+    top:
+        8%;
+
+    left:
+        65%;
+
+    width:
+        3px;
+
+    height:
+        3px;
+
+    animation:
+        particleEight
+        10s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   PARTICLE ANIMATIONS
+========================================================= */
+
+@keyframes particleOne {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                38px,
+                -28px
+            );
+
+    }
+
+}
+
+
+@keyframes particleTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                -35px,
+                42px
+            );
+
+    }
+
+}
+
+
+@keyframes particleThree {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                28px,
+                -38px
+            );
+
+    }
+
+}
+
+
+@keyframes particleFour {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                -35px,
+                -20px
+            );
+
+    }
+
+}
+
+
+@keyframes particleFive {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                20px,
+                45px
+            );
+
+    }
+
+}
+
+
+@keyframes particleSix {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                -28px,
+                30px
+            );
+
+    }
+
+}
+
+
+@keyframes particleSeven {
+
+    0%,
+    100% {
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        transform:
+            translate(
+                -30px,
+                -25px
+            );
+
+    }
+
+}
+
+
+@keyframes particleEight {
+
+    0%,
+    100% {
+
+        opacity:
+            .25;
+
+        transform:
+            translate(
+                0,
+                0
+            );
+
+    }
+
+    50% {
+
+        opacity:
+            .75;
+
+        transform:
+            translate(
+                25px,
+                35px
+            );
+
+    }
+
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.entry-content {
+
+    position:
+        relative;
+
+    z-index:
+        20;
+
+    width:
+        min(
+            1000px,
+            90%
+        );
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    text-align:
+        center;
+
+    pointer-events:
+        none;
+
+}
+
+
+/* =========================================================
+   NAME — SMALLER + SOFTER
+========================================================= */
+
+.entry-content h1 {
+
+    margin:
+        0;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    color:
+        var(--white);
+
+    font-size:
+        clamp(
+            46px,
+            6vw,
+            78px
+        );
+
+    line-height:
+        .92;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        -3px;
+
+    text-shadow:
+        0 0 28px
+        rgba(170, 120, 220, .08);
+
+    opacity:
+        0;
+
+    animation:
+        titleReveal
+        1.2s
+        var(--ease)
+        forwards
+        .3s;
+
+}
+
+
+/* CHANDU */
+
+.first-name {
+
+    display:
+        block;
+
+    color:
+        #eeeeF2;
+
+}
+
+
+/* BALAGANI */
+
+.last-name {
+
+    display:
+        block;
+
+    margin-top:
+        4px;
+
+    color:
+        #aaa1b2;
+
+}
+
+
+/* =========================================================
+   TITLE ANIMATION
+========================================================= */
+
+@keyframes titleReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(25px)
+            scale(.98);
+
+        filter:
+            blur(7px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        filter:
+            blur(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   ROLE
+========================================================= */
+
+.entry-role {
+
+    margin-top:
+        22px;
+
+    color:
+        var(--role);
+
+    font-size:
+        9px;
+
+    font-weight:
+        500;
+
+    letter-spacing:
+        4px;
+
+    text-transform:
+        uppercase;
+
+    opacity:
+        0;
+
+    animation:
+        roleReveal
+        1s
+        var(--ease)
+        forwards
+        .75s;
+
+}
+
+
+@keyframes roleReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(10px);
+
+        letter-spacing:
+            7px;
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+        letter-spacing:
+            4px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ENTER BUTTON
+========================================================= */
+
+.enter-button {
+
+    position:
+        relative;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        17px;
+
+    margin-top:
+        30px;
+
+    min-height:
+        46px;
+
+    padding:
+        7px 9px 7px 21px;
+
+    border:
+        1px solid
+        rgba(
+            220,
+            200,
+            235,
+            .22
+        );
+
+    border-radius:
+        50px;
+
+    background:
+        rgba(
+            35,
+            14,
+            48,
+            .25
+        );
+
+    color:
+        #eeeaf2;
+
+    font-family:
+        inherit;
+
+    font-size:
+        8px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2.4px;
+
+    cursor:
+        pointer;
+
+    overflow:
+        hidden;
+
+    pointer-events:
+        auto;
+
+    backdrop-filter:
+        blur(12px);
+
+    -webkit-backdrop-filter:
+        blur(12px);
+
+    box-shadow:
+        0 0 24px
+        rgba(
+            105,
+            39,
+            160,
+            .10
+        );
+
+    opacity:
+        0;
+
+    animation:
+        buttonReveal
+        1s
+        var(--ease)
+        forwards
+        1.05s;
+
+    transition:
+        transform .4s var(--ease),
+        border-color .4s ease,
+        background .4s ease,
+        box-shadow .4s ease;
+
+}
+
+
+.enter-button::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        80%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(
+                235,
+                220,
+                248,
+                .11
+            ),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left .75s var(--ease);
+
+}
+
+
+.enter-button:hover {
+
+    transform:
+        translateY(-3px)
+        scale(1.02);
+
+    border-color:
+        rgba(
+            220,
+            194,
+            244,
+            .42
+        );
+
+    background:
+        rgba(
+            105,
+            38,
+            151,
+            .15
+        );
+
+    box-shadow:
+        0 0 32px
+        rgba(
+            109,
+            40,
+            170,
+            .20
+        );
+
+}
+
+
+.enter-button:hover::before {
+
+    left:
+        150%;
+
+}
+
+
+.enter-button span {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.enter-button strong {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        50%;
+
+    background:
+        rgba(
+            225,
+            211,
+            238,
+            .08
+        );
+
+    border:
+        1px solid
+        rgba(
+            225,
+            211,
+            238,
+            .11
+        );
+
+    font-size:
+        14px;
+
+    font-weight:
+        400;
+
+    transition:
+        transform .4s var(--ease);
+
+}
+
+
+.enter-button:hover strong {
+
+    transform:
+        rotate(45deg);
+
+}
+
+
+@keyframes buttonReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(13px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   TECH ORBIT
+========================================================= */
+
+.tech-orbit {
+
+    position:
+        absolute;
+
+    width:
+        620px;
+
+    height:
+        620px;
+
+    top:
+        50%;
+
+    left:
+        50%;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    pointer-events:
+        none;
+
+    z-index:
+        5;
+
+}
+
+
+.tech {
+
+    position:
+        absolute;
+
+    padding:
+        5px 10px;
+
+    border:
+        1px solid
+        rgba(
+            220,
+            205,
+            235,
+            .11
+        );
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(
+            5,
+            3,
+            8,
+            .32
+        );
+
+    color:
+        rgba(
+            220,
+            205,
+            235,
+            .30
+        );
+
+    backdrop-filter:
+        blur(7px);
+
+    font-size:
+        6.5px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        1.8px;
+
+    animation:
+        techFloat
+        6s
+        ease-in-out
+        infinite;
+
+}
+
+
+.tech-python {
+
+    top:
+        14%;
+
+    left:
+        4%;
+
+}
+
+
+.tech-django {
+
+    top:
+        18%;
+
+    right:
+        3%;
+
+    animation-delay:
+        1.2s;
+
+}
+
+
+.tech-sql {
+
+    bottom:
+        18%;
+
+    left:
+        7%;
+
+    animation-delay:
+        2s;
+
+}
+
+
+.tech-web {
+
+    bottom:
+        13%;
+
+    right:
+        6%;
+
+    animation-delay:
+        2.8s;
+
+}
+
+
+@keyframes techFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px);
+
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.entry-footer {
+
+    position:
+        absolute;
+
+    left:
+        5%;
+
+    right:
+        5%;
+
+    bottom:
+        24px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    color:
+        rgba(
+            220,
+            205,
+            235,
+            .20
+        );
+
+    font-size:
+        6.5px;
+
+    font-weight:
+        600;
+
+    letter-spacing:
+        2px;
+
+    z-index:
+        20;
+
+    opacity:
+        0;
+
+    animation:
+        footerReveal
+        1s
+        ease
+        forwards
+        1.4s;
+
+}
+
+
+@keyframes footerReveal {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   TRANSITION
+========================================================= */
+
+.transition {
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #a83b73 0%,
+            #70289a 25%,
+            #240735 52%,
+            #030205 80%
+        );
+
+    z-index:
+        100;
+
+    pointer-events:
+        none;
+
+    opacity:
+        0;
+
+    transform:
+        scale(.15);
+
+    border-radius:
+        50%;
+
+    transition:
+        opacity .7s ease,
+        transform 1s
+        cubic-bezier(
+            .77,
+            0,
+            .175,
+            1
+        );
+
+}
+
+
+.transition.active {
+
+    opacity:
+        1;
+
+    transform:
+        scale(4);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .universe {
+
+        width:
+            440px;
+
+        height:
+            440px;
+
+    }
+
+
+    .universe-core {
+
+        width:
+            130px;
+
+        height:
+            130px;
+
+    }
+
+
+    .ring-one {
+
+        width:
+            275px;
+
+        height:
+            108px;
+
+    }
+
+
+    .ring-two {
+
+        width:
+            335px;
+
+        height:
+            138px;
+
+    }
+
+
+    .ring-three {
+
+        width:
+            405px;
+
+        height:
+            168px;
+
+    }
+
+
+    .entry-content {
+
+        width:
+            92%;
+
+    }
+
+
+    .entry-content h1 {
+
+        font-size:
+            clamp(
+                40px,
+                11vw,
+                62px
+            );
+
+        letter-spacing:
+            -2.5px;
+
+    }
+
+
+    .entry-role {
+
+        margin-top:
+            20px;
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            3.5px;
+
+    }
+
+
+    .enter-button {
+
+        margin-top:
+            27px;
+
+        min-height:
+            44px;
+
+        padding:
+            6px 8px 6px 18px;
+
+    }
+
+
+    .enter-button span {
+
+        font-size:
+            7px;
+
+        letter-spacing:
+            2px;
+
+    }
+
+
+    .tech-orbit {
+
+        width:
+            440px;
+
+        height:
+            440px;
+
+    }
+
+
+    .tech {
+
+        font-size:
+            5.5px;
+
+        padding:
+            4px 7px;
+
+    }
+
+
+    .entry-footer {
+
+        bottom:
+            16px;
+
+        font-size:
+            5px;
+
+        letter-spacing:
+            1.4px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .entry-content h1 {
+
+        font-size:
+            38px;
+
+        letter-spacing:
+            -2px;
+
+    }
+
+
+    .entry-role {
+
+        font-size:
+            6.5px;
+
+        letter-spacing:
+            2.8px;
+
+    }
+
+
+    .enter-button span {
+
+        font-size:
+            6.5px;
+
+    }
+
+
+    .entry-footer {
+
+        font-size:
+            4.5px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
