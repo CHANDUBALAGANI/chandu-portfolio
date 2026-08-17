@@ -102,7 +102,7 @@ document.addEventListener(
                         () => {
 
                             window.location.href =
-                                "index.html";
+                                "home.html";
 
                         },
                         850
